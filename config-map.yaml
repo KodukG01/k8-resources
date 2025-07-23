@@ -6,7 +6,6 @@ metadata:
     purpose: config
     environment: dev
 data:
-  MYSQL_HOST: mysql.roboshop.svc.cluster.local
-  MYSQL_PORT: 3306
-  MYSQL_PASSWORD: admin@123
-  
+  MYSQL_HOST: "mysql.roboshop.svc.cluster.local"
+  MYSQL_PORT: "3306"
+  MYSQL_PASSWORD: "admin@123"
