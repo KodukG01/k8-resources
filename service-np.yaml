@@ -5,7 +5,7 @@ metadata:
   labels:
     purpose: service-demo
     project: roboshop
-    environment: dev
+    environment: prod
 spec:
   type: NodePort
   selector:
