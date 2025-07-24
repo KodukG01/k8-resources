@@ -8,9 +8,9 @@ metadata:
     environment: dev
 spec:
   selector:
-    purpose: service-demo
+    purpose: service-demo-NodePort
     project: roboshop
-    environment: dev
+    environment: NodePort
   type: NodePort
   ports:
     - protocol: TCP
@@ -22,9 +22,9 @@ kind: Pod
 metadata:
   name: my-pod-np
   labels:
-    purpose: service-demo
+    purpose: service-demo-NodePort
     project: roboshop
-    environment: dev
+    environment: prod
 spec:
   containers:
     - name: nginx
