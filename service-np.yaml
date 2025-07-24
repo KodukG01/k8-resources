@@ -7,11 +7,11 @@ metadata:
     project: roboshop
     environment: dev
 spec:
+  type: NodePort
   selector:
     purpose: service-demo-NodePort
     project: roboshop
     environment: NodePort
-  type: NodePort
   ports:
     - protocol: TCP
       port: 80
