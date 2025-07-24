@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploynent
+  labels:
+    purpose: deployment-scale
+    environment: dev
+    app: nginx
+    project: roboshop
+spec:
+  selector:
+    matchLabels:
+      purpose: deployment-scale
+      environment: dev
+      app: nginx
+      project: roboshop
+  template:
+    metadata:
+      labels:
+        purpose: deployment-scale
+        environment: dev
+        app: nginx
+        project: roboshop
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          
