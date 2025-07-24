@@ -3,9 +3,8 @@ kind: Service
 metadata:
   name: my-service-np
   labels:
-    purpose: service-demo
-    project: roboshop
-    environment: prod
+    purpose: service-demo-NodePort
+   
 spec:
   type: NodePort
   selector:
