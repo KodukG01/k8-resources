@@ -1,31 +1,29 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service-np
+  name: nginx-np
   labels:
-    purpose: service-demo-NodePort
-   
+    purpose: service-np-demo
 spec:
   type: NodePort
   selector:
-    purpose: service-demo-NodePort
+    purpose: service-np-demo
     project: roboshop
-    environment: NodePort
+    environment: dev
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-
-
+      port: 80 # service port
+      targetPort: 80 # container port
+---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod-np
+  name: nginx-np
   labels:
-    purpose: service-demo-NodePort
+    purpose: service-np-demo
     project: roboshop
-    environment: prod
+    environment: dev
 spec:
   containers:
-    - name: nginx
-      image: nginx
+  - name: nginx
+    image: nginx
