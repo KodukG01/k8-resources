@@ -12,7 +12,7 @@ spec:
     fsType: ext4
     volumeHandle: vol-0f277c229b618ae13
 ---
-apiVersion: PersistentVolumeClaim
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: ebs-static
