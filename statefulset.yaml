@@ -38,7 +38,7 @@ spec:
   selector:
     matchLabels:
       purpose: statefulset
-      project: roboshops
+      project: roboshop
   serviceName: "nginx-svc-headless"
   replicas: 3 
   template:
