@@ -25,7 +25,6 @@ spec:
   ports:
   - port: 80
     name: web
-  clusterIP: None
   selector:
     purpose: statefulset
     project: roboshop
@@ -38,14 +37,14 @@ spec:
   selector:
     matchLabels:
       purpose: statefulset
-      project: roboshop
-  serviceName: "nginx-svc-headless"
-  replicas: 3 
+      project: roboshop # has to match .spec.template.metadata.labels
+  serviceName: "nginx-svc-headless" # this should be headless service
+  replicas: 3 # by default is 1
   template:
     metadata:
-       labels:
+      labels:
         purpose: statefulset
-        project: roboshop
+        project: roboshop # has to match .spec.selector.matchLabels
     spec:
       containers:
       - name: nginx
@@ -53,12 +52,13 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
+  # This is nothing but PVC, you can directly create here
   volumeClaimTemplates:
   - metadata:
       name: www
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "efs-roboshop "
+      storageClassName: "efs-roboshop"
       resources:
         requests:
           storage: 2Gi
