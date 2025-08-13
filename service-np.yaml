@@ -4,7 +4,7 @@ metadata:
   name: service-demo
 spec:
   type: NodePort
-  slector:
+  selector:
     purpose: service-demo
     project: roboshop
     environment: dev
