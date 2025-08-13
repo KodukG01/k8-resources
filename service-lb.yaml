@@ -21,20 +21,20 @@ metadata:
     purpose: service-demo
     project: roboshop
     environment: dev
-  spec:
-    replicas: 3
-    selector:
-      matchLabels:
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      purpose: service-demo
+      project: roboshop
+      environment: dev
+  template:
+    metadata:
+      labels:
         purpose: service-demo
         project: roboshop
         environment: dev
-    template:
-      metadata:
-        labels:
-          purpose: service-demo
-          project: roboshop
-          environment: dev
-      spec:
-        containers:
-          - name: nginx
-            image: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
