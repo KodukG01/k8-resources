@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: service-lb
 spec:
-  type: Loadbalancer
+  type: LoadBalancer
   selector:
     purpose: service-demo
     project: roboshop
@@ -38,4 +38,3 @@ metadata:
         containers:
           - name: nginx
             image: nginx
-            
