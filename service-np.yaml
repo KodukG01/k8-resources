@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: service-demo
 spec:
+  type: NodePort
   slector:
     purpose: service-demo
     project: roboshop
@@ -26,4 +27,3 @@ spec:
   containers:
     - name: nginx
       image: nginx
-      
