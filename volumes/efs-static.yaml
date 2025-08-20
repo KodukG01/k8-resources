@@ -37,7 +37,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLables:
+    matchLabels:
       purpose: efs-static-demo
       project: roboshop
   template:
